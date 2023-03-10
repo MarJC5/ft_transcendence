@@ -73,7 +73,7 @@ logs:
 reapp: #only rebuild web and backend
 	@echo "${GREEN}Rebuilding web & backend containers...${RESET}"
 	@make setup
-	@${DOCKER} up -d --build --force-recreate web backend
+	@${DOCKER} up -d --build --force-recreate web backend server
 
 rebuild: down delete
 	@echo "${GREEN}Rebuilding containers...${RESET}"
