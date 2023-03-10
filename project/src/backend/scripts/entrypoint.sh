@@ -10,6 +10,11 @@ done
 # Install dependencies
 cd /app && yarn install
 
+# Waiting on the DB to be ready
+while ! pg_isready -d $POSTGRES_DB -h $WEB_HOST -p 5432 -U $POSTGRES_USER; do
+    sleep 2
+done
+
 # First start, create the database and run migrations
 if [ ! -f /app/.setup ]; then
     npx prisma migrate dev --name init

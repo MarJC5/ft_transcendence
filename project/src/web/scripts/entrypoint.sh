@@ -35,6 +35,7 @@ elif [ "$ENVIRONMENT" == "production" ]; then
     # Start the app in prod mode
     echo "Starting frontend in prod mode"
     yarn build
+    yarn dev
 else
     echo "Unknown environment: $ENVIRONMENT"
     exit 1
