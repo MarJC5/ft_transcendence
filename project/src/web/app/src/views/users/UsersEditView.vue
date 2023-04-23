@@ -12,7 +12,7 @@
         <!-- User: avatar upload -->
         <div class="user-card grid full-card">
           <div class="column user-card__avatar large">
-            <img :src="user?.avatar" alt="avatar" />
+            <img v-bind:src="user?.avatar" alt="avatar" />
           </div>
           <div class="user-card__upload">
             <label for="avatar">Changer l'avatar</label>
