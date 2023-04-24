@@ -71,6 +71,9 @@
             <option value="admin">ADMIN</option>
           </select>
         </div>
+        <RouterLink :to="{ name: '2fa' }" class="link">
+          <button class="btn">2FA</button>
+        </RouterLink>
         <div class="form-fields form-fields--btns">
           <input class="btn btn--submit" type="submit" value="Modifier" />
           <button
@@ -89,7 +92,7 @@
 <script lang="ts">
 import type { UserInterface } from "@/interfaces/user.interface";
 import { useUserStore } from "@/stores/user";
-import { useRoute } from "vue-router";
+import { useRoute, RouterLink } from "vue-router";
 import axios from "axios";
 import { defineComponent } from "vue";
 import { EditIcon } from "@/components/icons";
@@ -98,6 +101,7 @@ export default defineComponent({
   name: "UsersEditView",
   components: {
     EditIcon,
+    RouterLink
   },
   setup() {
     const userStore = useUserStore();
